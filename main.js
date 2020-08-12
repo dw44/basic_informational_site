@@ -1,7 +1,8 @@
-const http = require('http'),
-  url = require('url'),
-  fs = require('fs')
-  TEXT_HTML = {'Content-Type': 'text/html'};
+const port = 8080,
+  http = require('http'),
+  router = require('./router'),
+  contentTypes = require('./contentTypes'),
+  utils = require('./utils');
 
 
 http.createServer((req, res) => {
