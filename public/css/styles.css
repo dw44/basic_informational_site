@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
+
+*, 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* ---------- Navbar ---------- */
+
+nav {
+  background-color: #444;
+  text-align: right;
+  height: 112px;
+  min-width: 320px;
+}
+
+nav a {
+  color: #61dafb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav a:hover,
+nav a:focus,
+.current-page {
+  color: #0a94fc;
+  text-decoration: underline;
+}
+
+.navbar-item:nth-of-type(2) {
+  margin: 10px 0;
+}
+
+#navbar-list {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  padding: 10px;
+}
+
+@media (min-width: 480px) {
+  nav {
+    height: 90px;
+  }
+
+  #navbar-list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .navbar-item {
+    display: inline-block;
+    margin: 0 20px;
+  }
+}
+
+/* ---------- Body ---------- */
+
+main {
+  width: 100%;
+  min-width: 360px;
+  margin: 20px auto;
+  height: calc(100vh - 150px);
+  font-family: 'Ubuntu', sans-serif;
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.title {
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.6em;
+}
+
+.home-title {
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.description {
+  text-align: center;
+  text-decoration: underline;
+  color: #0080ff;
+  padding: 3px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+@media (min-width: 480px) {
+  main {
+    width: 480px;
+  }
+}
+
+/* ---------- Form ---------- */
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-form > * {
+  margin: 10px;
+}
+
+.form-title {
+  font-size: 1.6em;
+  color: #0080ff;
+}
+
+input[type="text"],
+input[type="email"] {
+  height: 30px;
+}
+
+input,
+textarea {
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+  background-color: #444;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.1em;
+}
+
+.button {
+  width: 160px;
+  border: none;
+  background-color: #0a94fc;
+  color: #f3f6f9;
+  font-size: 1.333em;
+  border-radius: 5px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0080ff
+}
+
