@@ -1,5 +1,3 @@
-const { readSync } = require('fs');
-
 const port = 8080,
   http = require('http'),
   router = require('./router'),
@@ -8,29 +6,33 @@ const port = 8080,
 
 router.get('/', (req, res) => {
   res.writeHead(200, contentTypes.html);
-  utils.getFile('views/index.html');
+  utils.getFile('views/index.html', res);
 });
 
 router.get('/about.html', (req, res) => {
   res.writeHead(200, contentTypes.html);
-  utils.getFile('views/about.html');
+  utils.getFile('views/about.html', res);
 });
 
 router.get('/contact.html', (req, res) => {
   res.writeHead(200, contentTypes.html);
-  utils.getFile('views/contact.html');
+  utils.getFile('views/contact.html', res);
 });
 
 router.post('/', (req, res) => {
   res.writeHead(200, contentTypes.html);
-  utils.getFile('views/index.html');
+  utils.getFile('views/index.html', res);
 });
 
-http.createServer((req, res) => {
-  console.log(url.parse(req.url.path, true));
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.write('The project has started!');
-  res.end();
-}).listen(8080, () => {
-  console.log('Server running on port 8080');
+router.get('/reset.css', (req, res) => {
+  res.writeHead(200, contentTypes.css);
+  utils.getFile('public/css/reset.css', res);
 });
+
+router.get('/styles.css', (req, res) => {
+  res.writeHead(200, contentTypes.css);
+  utils.getFile('public/css/styles.css', res);
+});
+
+http.createServer(router.handle).listen(port);
+console.log(`The server is listening on port number: ${port}`);
